@@ -1,0 +1,111 @@
+#
+# Recommended minimum configuration:
+#
+
+# Example rule allowing access from your local networks.
+# Adapt to list your (internal) IP networks from where browsing
+# should be allowed
+#acl localnet src 10.0.0.0/8	# RFC1918 possible internal network
+#acl localnet src 172.16.0.0/12	# RFC1918 possible internal network
+#acl localnet src 192.168.0.0/16	# RFC1918 possible internal network
+#acl localnet src fc00::/7       # RFC 4193 local private network range
+#acl localnet src fe80::/10      # RFC 4291 link-local (directly plugged) machines
+
+##############################MIS Added Rules#########################################################################
+
+auth_param basic program /usr/lib64/squid/basic_ldap_auth -R -b "dc=ciqhyd,dc=com" -D "cn=Hyd-squidsvc,OU=System Accounts,DC=ciqhyd,dc=com" -w "Welcome123" -f sAMAccountName=%s -h dmz-hyd-dc1.ciqhyd.com			  
+auth_param basic children 10
+auth_param basic realm Please Enter Your CIQHYD Domain Credentials without entering "Domain Name"
+auth_param basic credentialsttl 1 hour
+acl ldap-auth proxy_auth REQUIRED
+
+external_acl_type ldap_group %LOGIN /usr/lib64/squid/ext_ldap_group_acl -R -b "dc=ciqhyd,dc=com" -D "cn=Hyd-squidsvc,ou=System Accounts,DC=ciqhyd,dc=com" -w "Welcome123" -f "(&(objectclass=person) (sAMAccountname=%v)(memberof=cn= %a,ou=Security,OU=Groups,DC=ciqhyd,DC=com))" -h dmz-hyd-dc1.ciqhyd.com
+acl allowedusers external ldap_group Tech
+
+acl allowhostgrp src 172.24.0.0/16
+acl allowmishosts src 172.22.4.226
+acl allowmishosts src 172.22.4.245
+acl allowmishosts src 172.22.4.241
+acl allowmishosts src 172.22.4.246
+acl allowmishosts src 172.22.4.204
+acl allowmishosts src 172.22.4.205
+acl allowmishosts src 172.22.4.178
+acl allowmishosts src 172.22.4.255
+acl allowmishosts src 172.22.4.176
+acl allowmishosts src 172.22.4.252
+acl allowmishosts src 172.22.4.208
+
+
+##############################MIS Added Rules#########################################################################
+
+acl SSL_ports port 443
+acl Safe_ports port 80			# http
+acl Safe_ports port 443			# https
+
+#acl Safe_ports port 21			# ftp
+#acl Safe_ports port 70			# gopher
+#acl Safe_ports port 210		# wais
+#acl Safe_ports port 1025-65535		# unregistered ports
+#acl Safe_ports port 280		# http-mgmt
+#acl Safe_ports port 488		# gss-http
+#acl Safe_ports port 591		# filemaker
+#acl Safe_ports port 777		# multiling http
+
+acl CONNECT method CONNECT
+
+#
+# Recommended minimum Access Permission configuration:
+#
+# Deny requests to certain unsafe ports
+http_access deny !Safe_ports
+
+# Deny CONNECT to other than secure SSL ports
+
+http_access deny CONNECT !SSL_ports
+
+# Only allow cachemgr access from localhost
+http_access allow localhost manager
+http_access deny manager
+
+# We strongly recommend the following be uncommented to protect innocent
+# web applications running on the proxy server who think the only
+# one who can access services on "localhost" is a local user
+#http_access deny to_localhost
+
+#
+# INSERT YOUR OWN RULE(S) HERE TO ALLOW ACCESS FROM YOUR CLIENTS
+#
+
+# Example rule allowing access from your local networks.
+# Adapt localnet in the ACL section to list your (internal) IP networks
+# from where browsing should be allowed
+
+##############################MIS Added Rules#########################################################################
+
+http_access allow allowmishosts
+http_access allow allowhostgrp allowedusers
+
+##############################MIS Added Rules#########################################################################
+
+#http_access allow localnet
+http_access allow localhost
+
+# And finally deny all other access to this proxy
+http_access deny all
+
+# Squid normally listens to port 3128
+http_port 80
+
+# Uncomment and adjust the following to add a disk cache directory.
+#cache_dir ufs /var/spool/squid 100 16 256
+
+# Leave coredumps in the first cache dir
+coredump_dir /var/spool/squid
+
+#
+# Add any of your own refresh_pattern entries above these.
+#
+refresh_pattern ^ftp:		1440	20%	10080
+refresh_pattern ^gopher:	1440	0%	1440
+refresh_pattern -i (/cgi-bin/|\?) 0	0%	0
+refresh_pattern .		0	20%	4320
