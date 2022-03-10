@@ -3,6 +3,7 @@ resource "aws_iam_user" "example" {
 }
 
 variable "user" {
+   default = "Newharnestest"
 }
 
 resource "time_sleep" "wait_30_seconds" {
