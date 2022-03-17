@@ -47,6 +47,16 @@ phases:
     stepsInParallel: false
   - type: VERIFY_SERVICE
     name: Verify Service
+    steps:
+    - type: DATA_DOG_LOG
+      name: Datadog Log
+      properties:
+        analysisServerConfigId: 7nDEiYcNQHqhRtjWfaByLA
+        comparisonStrategy: COMPARE_WITH_CURRENT
+        hostnameField: host
+        hostnameTemplate: ${instanceDetails.hostName}
+        query: error fail*
+        timeDuration: 15
     stepsInParallel: false
   - type: WRAP_UP
     name: Wrap Up
