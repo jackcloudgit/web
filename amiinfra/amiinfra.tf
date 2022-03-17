@@ -23,7 +23,7 @@ resource "aws_autoscaling_group" "asg_test" {
   desired_capacity          = 0
   force_delete              = true
   #launch_template           = "lt-0aa7ca64ae40d69a4"
-  vpc_zone_identifier       = "subnet-2eefa748", "subnet-70e3b62f"
+  vpc_zone_identifier       = [subnet-2eefa748, subnet-70e3b62f]
   launch_template {
     id      = "lt-0aa7ca64ae40d69a4"
     version = 1
