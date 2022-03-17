@@ -107,13 +107,15 @@ preDeploymentSteps:
     host: null
     outputVars: ''
     publishAsVar: false
-    scriptString: 'echo "terraform: ${terraform}'
+    scriptString: 'echo "terraform: ${terraform}"'
     scriptType: BASH
     sshKeyRefName: null
     sweepingOutputName: null
     sweepingOutputScope: null
     templateExpressions: null
-    templateVariables: ''
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
     timeoutMillis: 60000
 - type: JIRA_CREATE_UPDATE
   name: Jira
