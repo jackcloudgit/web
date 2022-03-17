@@ -16,4 +16,22 @@ notificationRules:
   userGroupAsExpression: false
   userGroupNames:
   - Account Administrator
+preDeploymentSteps:
+- type: TERRAFORM_PROVISION
+  name: Terraform Provision
+  properties:
+    backendConfigs: null
+    delegateTag: ''
+    environmentVariables: null
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: false
+    name: Terraform Provision
+    provisionerName: terraprovsion
+    runPlanOnly: true
+    targets: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    variables: null
+    workspace: ''
 templatized: false
