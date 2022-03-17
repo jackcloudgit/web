@@ -52,3 +52,9 @@ output asg {
   value = aws_autoscaling_group.asg_test.name
   
 }
+
+output region {
+ 
+  value = data.aws_region.current
+  
+}
