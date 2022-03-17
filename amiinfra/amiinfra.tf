@@ -27,9 +27,7 @@ resource "aws_autoscaling_group" "asg_test" {
     id      = "lt-0aa7ca64ae40d69a4"
     version = 1
   }
-  vpc_zone_identifier       = [aws_subnet.private[0].id, aws_subnet.private[1].id]
-  target_group_arns         = [aws_lb_target_group.tgtest.arn]
-
+  
   tag {
       key = "Name"
       value = "${var.name}-web"
