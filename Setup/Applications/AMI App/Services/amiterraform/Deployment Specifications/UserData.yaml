@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: AMI
+data: |-
+  #!/bin/bash
+  sudo yum install unzip -y
+  curl -O -L  https://releases.hashicorp.com/terraform/0.13.0/terraform_0.13.0_linux_amd64.zip
+  sudo unzip terraform_0.13.0_linux_amd64.zip
+  sudo mv ./terraform /usr/bin/
