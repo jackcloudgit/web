@@ -60,4 +60,16 @@ preDeploymentSteps:
     tfVarGitFileConfig: null
     timeoutMillis: 300000
     workspace: ''
+- type: JIRA_CREATE_UPDATE
+  name: Jira
+  properties:
+    customFields: null
+    issueType: Task
+    jiraAction: CREATE_TICKET
+    jiraConnectorName: MyJIra
+    labels:
+    - jackprod
+    priority: '2'
+    project: MYT
+    summary: this is to test the artifactory
 templatized: false
