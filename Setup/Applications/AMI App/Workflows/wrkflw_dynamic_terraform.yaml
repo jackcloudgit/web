@@ -108,8 +108,8 @@ preDeploymentSteps:
     outputVars: ''
     publishAsVar: false
     scriptString: |-
-      echo "terraform: ${terraform.aws.region}"
-      echo "terraform: ${terraform.aws_autoscaling_group.asg_test.name}"
+      echo "terraform: ${terraform.asg}"
+      echo "terraform: ${terraform.region}"
     scriptType: BASH
     sshKeyRefName: null
     sweepingOutputName: null
