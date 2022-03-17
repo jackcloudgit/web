@@ -40,4 +40,11 @@ preDeploymentSteps:
       valueType: ENCRYPTED_TEXT
       value: gcpkms:JackRemote
     workspace: ''
+- type: APPROVAL
+  name: Approval
+  properties:
+    approvalStateType: USER_GROUP
+    timeoutMillis: 86400000
+    userGroupNames:
+    - Account Administrator
 templatized: false
