@@ -1,0 +1,7 @@
+harnessApiVersion: '1.0'
+type: TERRAFORM
+path: amiinfra
+secretMangerName: Harness Secrets Manager - GCP KMS
+skipRefreshBeforeApplyingPlan: false
+sourceRepoBranch: master
+sourceRepoSettingName: MyGit
