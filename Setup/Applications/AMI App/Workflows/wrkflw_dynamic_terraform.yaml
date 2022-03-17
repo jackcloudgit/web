@@ -16,4 +16,28 @@ notificationRules:
   userGroupAsExpression: false
   userGroupNames:
   - Account Administrator
+preDeploymentSteps:
+- type: TERRAFORM_PROVISION
+  name: Terraform Provision
+  properties:
+    backendConfigs: null
+    delegateTag: ''
+    environmentVariables: null
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: false
+    name: Terraform Provision
+    provisionerName: terraprovsion
+    runPlanOnly: true
+    targets: null
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    variables:
+    - name: AWS_ACCESS_KEY_ID
+      valueType: TEXT
+      value: AKIAS44XMJ7JMHB2E2PF
+    - name: AWS_SECRET_ACCESS_KEY
+      valueType: ENCRYPTED_TEXT
+      value: gcpkms:JackRemote
+    workspace: ''
 templatized: false
