@@ -55,6 +55,6 @@ output asg {
 
 output region {
  
-  value = data.aws_region.current
+  value = provider.aws_region
   
 }
