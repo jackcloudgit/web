@@ -126,9 +126,12 @@ preDeploymentSteps:
     jiraConnectorName: MyJIra
     labels:
     - jackprod
-    priority: '2'
+    priority: ''
     project: MYT
     summary: this is to test the artifactory
+    templateUuid: null
+    templateVariables: null
+    templateVersion: null
 - type: APPROVAL
   name: Approval_2
   properties:
