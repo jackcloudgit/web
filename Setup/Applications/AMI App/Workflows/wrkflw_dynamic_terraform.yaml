@@ -78,6 +78,13 @@ preDeploymentSteps:
       valueType: ENCRYPTED_TEXT
       value: gcpkms:JackRemote
     workspace: ''
+- type: APPROVAL
+  name: Approval
+  properties:
+    approvalStateType: USER_GROUP
+    timeoutMillis: 86400000
+    userGroupNames:
+    - Account Administrator
 - type: SHELL_SCRIPT
   name: Shell Script
   properties:
@@ -95,13 +102,6 @@ preDeploymentSteps:
     templateExpressions: null
     templateVariables: ''
     timeoutMillis: 60000
-- type: APPROVAL
-  name: Approval
-  properties:
-    approvalStateType: USER_GROUP
-    timeoutMillis: 86400000
-    userGroupNames:
-    - Account Administrator
 - type: TERRAFORM_APPLY
   name: Terraform Apply
   properties:
