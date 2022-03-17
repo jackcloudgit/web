@@ -8,8 +8,12 @@ infrastructure:
   asgIdentifiesWorkload: false
   cloudProviderName: MyPersonalAWS
   expressions:
-    autoScalingGroupName: ${terraform.autoscaling_group_pipeline_id}
     region: ${terraform.region}
+    autoScalingGroupName: ${terraform.asg}
+    classicLoadBalancers: null
+    targetGroupArns: null
+    stageClassicLoadBalancers: null
+    stageTargetGroupArns: null
   hostNameConvention: ${host.ec2Instance.privateDnsName.split('\.')[0]}
   useTrafficShift: false
 provisioner: terraprovsion
