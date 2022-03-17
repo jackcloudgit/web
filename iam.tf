@@ -16,7 +16,7 @@ resource "time_sleep" "wait_30_seconds" {
 }
 
 variable "user" {
-   default = "Newharnestest"
+   default = "Newharnestest1"
 }
 
 variable "AWS_ACCESS_KEY_ID" {}
