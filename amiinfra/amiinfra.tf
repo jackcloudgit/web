@@ -9,6 +9,9 @@ variable "user" {
 
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_ACCESS_KEY" {}
+variable "region" {
+   default = "us-east-1"
+}
 
 ################################################################################
 # Auto Scaling Group
@@ -53,8 +56,9 @@ output asg {
   
 }
 
+
 output region {
  
-  value = provider.aws_region
+  value = var.region
   
 }
