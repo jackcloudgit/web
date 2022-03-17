@@ -85,19 +85,6 @@ preDeploymentSteps:
     timeoutMillis: 86400000
     userGroupNames:
     - Account Administrator
-- type: TERRAFORM_APPLY
-  name: Terraform Apply
-  properties:
-    delegateTag: ''
-    exportPlanToApplyStep: false
-    inheritApprovedPlan: true
-    name: Terraform Apply
-    provisionerName: terraprovsion
-    runPlanOnly: false
-    tfVarFiles: ''
-    tfVarGitFileConfig: null
-    timeoutMillis: 300000
-    workspace: ''
 - type: SHELL_SCRIPT
   name: Shell Script
   properties:
@@ -115,6 +102,19 @@ preDeploymentSteps:
     templateExpressions: null
     templateVariables: ''
     timeoutMillis: 60000
+- type: TERRAFORM_APPLY
+  name: Terraform Apply
+  properties:
+    delegateTag: ''
+    exportPlanToApplyStep: false
+    inheritApprovedPlan: true
+    name: Terraform Apply
+    provisionerName: terraprovsion
+    runPlanOnly: false
+    tfVarFiles: ''
+    tfVarGitFileConfig: null
+    timeoutMillis: 300000
+    workspace: ''
 - type: JIRA_CREATE_UPDATE
   name: Jira
   properties:
