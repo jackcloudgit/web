@@ -70,7 +70,7 @@ phases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: amiterraform
+  serviceName: amiterraform-clone-datadog
   statefulSet: false
 preDeploymentSteps:
 - type: TERRAFORM_PROVISION
@@ -184,6 +184,6 @@ rollbackPhases:
     name: Wrap Up
     stepsInParallel: false
   provisionNodes: false
-  serviceName: amiterraform
+  serviceName: amiterraform-clone-datadog
   statefulSet: false
 templatized: false
