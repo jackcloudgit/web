@@ -129,6 +129,13 @@ preDeploymentSteps:
     priority: '2'
     project: MYT
     summary: this is to test the artifactory
+- type: APPROVAL
+  name: Approval_2
+  properties:
+    approvalStateType: USER_GROUP
+    timeoutMillis: 86400000
+    userGroupNames:
+    - Account Administrator
 rollbackPhases:
 - type: AMI
   computeProviderName: MyPersonalAWS
