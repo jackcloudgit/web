@@ -36,7 +36,7 @@ resource "aws_autoscaling_group" "asg_test" {
   }
 
   timeouts {
-    delete = "16m"
+    delete = "15m"
   }
   
    tag {
