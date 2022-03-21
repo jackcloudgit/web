@@ -1,0 +1,19 @@
+notify:
+  name: Notify on slack
+  runs-on: ubuntu-latest
+  needs: [build]
+  
+  if: {{ github.base_ref == 'main' && github.event_name == 'pull_request' }}
+  
+  steps:
+    - uses: abinoda/slack-action@master
+      env:
+        #requied
+        SLACK_BOT_TOKEN: {{ secrets.SLACK_BOT_TOKEN }}
+      with:
+        #custom message to send to slack
+        args: '{\"channel\":\"C1234567890\",\"text\":\"Hello world\"}'
+      if: success()
+       
+  
+  
