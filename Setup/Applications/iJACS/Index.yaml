@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: APPLICATION
+branchName: master
+gitConnector: mygit
+isGitSyncEnabled: true

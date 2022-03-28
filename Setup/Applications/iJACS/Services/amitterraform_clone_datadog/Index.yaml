@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: SERVICE
+artifactType: AMI
+configVariables:
+- name: DD_API_KEY
+  value: d610c2a5ece0bc90f8a2e37299796ffd
+  valueType: TEXT
+deploymentType: AMI
