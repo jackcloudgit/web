@@ -24,5 +24,6 @@ jobs:
       uses: distributhor/workflow-webhook@v2
       env:
         webhook_type: 'json-extended'
-        webhook_url: https://app.harness.io/gateway/api/webhooks/rW3VVwMPWpLXW9TLFPVgQCPNgMIU286obLyTkQqc/git?accountId=jRvh9yIYTgq07-E2Sl29BA
+        webhook_url: 'https://app.harness.io/gateway/api/webhooks/rW3VVwMPWpLXW9TLFPVgQCPNgMIU286obLyTkQqc/git?accountId=jRvh9yIYTgq07-E2Sl29BA'
+        webhook_secret: 'test'
         data: '{ "path": "amiinfra/" }'      
