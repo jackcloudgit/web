@@ -9,7 +9,7 @@ on:
   pull_request:
     types: [opened, synchorniz, reopened, closed]
     paths:
-      - 'amiinfra/*'
+      - 'amiinfra/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,6 +24,6 @@ jobs:
       uses: distributhor/workflow-webhook@v2
       env:
         webhook_type: 'json-extended'
-        webhook_url: 'https://app.harness.io/gateway/api/webhooks/rW3VVwMPWpLXW9TLFPVgQCPNgMIU286obLyTkQqc/git?accountId=jRvh9yIYTgq07-E2Sl29BA'
+        webhook_url: 'https://app.harness.io/gateway/api/webhooks/FO9cwwjjpq3gQOuhMInvLihu8lJK4blTNB95EbiI/git?accountId=sgxxJW-ZSny4kgDdw2Cl2Q'
         webhook_secret: 'test'
-        data: '{ "path": "amiinfra/" }'      
+        data: '{ "path": "amiinfra/" }'
