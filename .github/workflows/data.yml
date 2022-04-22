@@ -31,4 +31,6 @@ jobs:
     - name: export usergroup
       run: |
         ls -l
-        pwd      
+        pwd
+        cd ..
+        ls -l  
