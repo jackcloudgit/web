@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v2
       - name: set env
         run: | 
-          echo "approvergroup=$(cat approval)" >> $GITHUB_ENV
+          echo ::set-env name=APPROVER::$(cat approval)
       
       - name: webhook
         uses: distributhor/workflow-webhook@v2
@@ -36,4 +36,6 @@ jobs:
           data: '{ "path": "test", "env": "test", "group": "Account Administrators", "approver": "${{ GITHUB_ENV }}" }'
       
       - name: variable validation
-        run: env
+        run: |
+          echo $APPROVER
+          echo $name
