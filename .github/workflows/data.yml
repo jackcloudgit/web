@@ -34,7 +34,7 @@ jobs:
       - name: custom env
         run: echo $jack
         env:
-          jack: testing
+          JACK: "testing"
 
       - name: read env
         run: |
