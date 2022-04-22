@@ -34,7 +34,7 @@ jobs:
       - name: customd env
         run: echo $JACK
         env:
-          JACK: "testing alodng with webhook"
+          JACK: "testing along with webhook"
 
       - name: read env
         run: |
