@@ -34,5 +34,5 @@ jobs:
          
     - name: read env
       run: |
-        echo "this is testing the env ${{ env.group }}"
+        echo "this is testing the env ${{ env.data }}"
      
