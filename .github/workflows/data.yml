@@ -22,6 +22,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+      
+      - name: read data
+        run: |
+          usergroup=$(cat approval)
+          echo $usergroup
 
       - name: customd env
         run: echo $data
