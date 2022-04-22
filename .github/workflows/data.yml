@@ -22,21 +22,13 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-
-      - name: webhook
-        uses: distributhor/workflow-webhook@v2
-        env:
-          webhook_type: 'json-extended'
-          webhook_url: 'https://app.harness.io/gateway/api/webhooks/FO9cwwjjpq3gQOuhMInvLihu8lJK4blTNB95EbiI/git?accountId=sgxxJW-ZSny4kgDdw2Cl2Q'
-          webhook_secret: 'test'
-          data: '{ "path": "amiinfra/", "env": "test" }'
-    
+  
       - name: custom env
-        run: echo $jack
+        run: echo $JACK
         env:
           JACK: "testing"
 
       - name: read env
         run: |
-          echo "this is testing the env ${{ env.jack }}" 
+          echo "this is testing the env ${{ env.JACK }}" 
      
