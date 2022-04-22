@@ -25,9 +25,9 @@ jobs:
       
       - name: customd env
         run: | 
-          echo $data, $USESJACK
+          echo $data
+          echo "PR_TITLE=$(cat approval)" >> $data
           
         shell: bash
         env:
-          data: '{ "path": "test52", "env": "test" }'
-          USESJACK: $(cat approval)
+          data: '{ "path": "test52", "env": "test" }'        
