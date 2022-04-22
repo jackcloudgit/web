@@ -28,7 +28,7 @@ jobs:
           usergroup=$(cat approval)
       
       - name: customd env
-        run: echo $data
+        run: echo $data, $group
         env:
-          JACK: "testidng falong with webhook"
-          data: '{ "path": "test52", "env": "test", "group": "$(cat approval)"  }'
+          group: ${{ usergroup }}
+          data: '{ "path": "test52", "env": "test" }'
