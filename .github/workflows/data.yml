@@ -29,7 +29,7 @@ jobs:
           webhook_type: 'json-extended'
           webhook_url: 'https://app.harness.io/gateway/api/webhooks/FO9cwwjjpq3gQOuhMInvLihu8lJK4blTNB95EbiI/git?accountId=sgxxJW-ZSny4kgDdw2Cl2Q'
           webhook_secret: 'test'
-          data: '{ "path": "test/", "env": "test", "group": "Account Administrator" }'
+          data: '{ "path": "test/.", "env": "test", "group": "Account Administrator" }'
     
       - name: customd env
         run: echo $JACK
