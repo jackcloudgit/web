@@ -38,3 +38,4 @@ jobs:
       - name: variable validation
         run: |
           echo "${{ env.approvergroup }}"
+          echo $data
