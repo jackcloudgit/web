@@ -32,11 +32,11 @@ jobs:
           data: '{ "path": "amiinfra/", "env": "test" }'
     
       - name: custom env
-        run: echo $jack
+        run: echo $JACK
         env:
           JACK: "testing along with webhook"
 
       - name: read env
         run: |
-          echo "this is testing the env ${{ env.jack }}" 
+          echo "this is testing the env ${{ env.JACK }}" 
      
