@@ -7,9 +7,9 @@ on:
   push:
     branches: [ master ]
   pull_request:
-    types: [opened, synchorniz, reopened, closed]
+    types: [opened, synchronize, reopened, closed]
     paths:
-      - 'amiinfra/**'
+      - 'test/**'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,7 +29,7 @@ jobs:
           webhook_type: 'json-extended'
           webhook_url: 'https://app.harness.io/gateway/api/webhooks/PKy4Wh71AbbPnjYTALe88diqcYEQC713GidulCL8/git?accountId=O0Y6qKtkT0y3pp5IFchY-w'
           webhook_secret: 'test'
-          data: '{ "path": "test", "env": "test", "group": "Account Administrator" }'
+          data: '{ "path": "test/*", "env": "test", "group": "Account Administrator" }'
     
       - name: customd env
         run: echo $JACK
