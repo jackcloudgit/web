@@ -29,6 +29,4 @@ jobs:
         data: '{ "path": "amiinfra/", "env": "test" }'
     
     - name: export usergroup
-      run: | 
-        ls -l
-        env
+      run: cat approval
