@@ -26,7 +26,8 @@ jobs:
       - name: customd env
         run: | 
           echo $data, $USESJACK
-          USESJACK=$(cat approval)
+          
         shell: bash
         env:
           data: '{ "path": "test52", "env": "test" }'
+          USESJACK: $(cat approval)
