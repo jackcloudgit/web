@@ -31,4 +31,5 @@ jobs:
           echo $jackuser
         shell: bash
         env:
-          data1: '{ "path": "test52", "env": "test" }'        
+          data: '{ "path": "test52", "env": "test" }'
+          myapprover: $jackuser
