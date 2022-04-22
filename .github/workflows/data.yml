@@ -26,10 +26,9 @@ jobs:
       - name: read data
         run: |
           usergroup=$(cat approval)
-          echo $usergroup
-
+      
       - name: customd env
         run: echo $data
         env:
           JACK: "testidng falong with webhook"
-          data: '{ "path": "test52", "env": "test", "group": "Account Administrator" }'
+          data: '{ "path": "test52", "env": "test", "group": "$usergroup"  }'
