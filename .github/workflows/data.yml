@@ -25,9 +25,8 @@ jobs:
       
       - name: customd env
         run: | 
-          echo $data
-          echo "PR_TITLE=$(cat approval)" >> $data
-          
+          usergroup=$(cat approval)
+          echo $usergroup
         shell: bash
         env:
           data: '{ "path": "test52", "env": "test" }'        
