@@ -31,4 +31,4 @@ jobs:
           echo $jackuser
         shell: bash
         env:
-          data: '{ "path": "test52", "env": "test" }'        
+          data1: '{ "path": "test52", "env": "test" }'        
