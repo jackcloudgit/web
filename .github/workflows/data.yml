@@ -28,8 +28,7 @@ jobs:
         webhook_secret: 'test'
         data: '{ "path": "amiinfra/", "env": "test" }'
     
-    - name: "Checkout source code"
-      uses: "actions/checkout@v1"
+    - name: export usergroup
       run: |
         ls -l
-        pwd    
+        pwd      
