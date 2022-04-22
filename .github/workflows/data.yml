@@ -38,6 +38,6 @@ jobs:
 
       - name: read env
         run: |
-          echo "this is testing the env ${{ env.JACK }}" 
-          echo "this is testing the env ${{ env.data.path }}" 
+          echo "this is testing the env $JACK" 
+          echo "this is testing the env $data.path" 
      
