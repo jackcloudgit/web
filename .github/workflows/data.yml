@@ -30,6 +30,5 @@ jobs:
     
     - name: export usergroup
       run: |
-        ls -l  
-        cd ./src/
-        cat approval
+        ls -l
+        echo $path        
