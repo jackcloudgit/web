@@ -25,10 +25,10 @@ jobs:
       
       - name: read data
         run: |
-          usergroup=$(cat approval)
+          USESJACK=$(cat approval)
       
       - name: customd env
         run: echo $data, $group
         env:
-          group: "${{ usergroup }}"
+          group: "${{ USESJACK }}"
           data: '{ "path": "test52", "env": "test" }'
