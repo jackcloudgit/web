@@ -31,7 +31,7 @@ jobs:
           webhook_secret: 'test'
           data: '{ "path": "test", "env": "test", "group": "Account Administrator" }'
     
-      - name: custom env
+      - name: customd env
         run: echo $JACK
         env:
           JACK: "testing along with webhook"
