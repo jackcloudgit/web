@@ -36,4 +36,4 @@ jobs:
           data: '{ "path": "test", "env": "test", "group": "Account Administrators"}'
       
       - name: variable validation
-        run: echo "$approvergroup is tgesting
+        run: echo "$approvergroup is tgesting"
