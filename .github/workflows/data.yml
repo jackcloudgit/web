@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: customd env
-        run: echo $data.path
+        run: echo $data
         env:
           JACK: "testidng falong with webhook"
           data: '{ "path": "test52", "env": "test", "group": "Account Administrator" }'
