@@ -23,12 +23,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       
-      - name: read data
-        run: |
-          USESJACK=$(cat approval)
-      
       - name: customd env
-        run: echo $data, $group
+        run: | 
+          echo $data, $USESJACK
+          USESJACK=$(cat approval)
+        shell: bash
         env:
-          group: "${{ USESJACK }}"
           data: '{ "path": "test52", "env": "test" }'
