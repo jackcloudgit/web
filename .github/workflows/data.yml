@@ -19,18 +19,21 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
+    #echo "jackuser=$usergroup" >> $GITHUB_ENV
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      
-      - name: customd env
+      - name: set env
         run: | 
-          usergroup=$(cat approval)
-          echo $usergroup
-          echo "jackuser=$usergroup" >> $GITHUB_ENV
-          echo $myapprover
-          
-        shell: bash
+          echo "approvergroup=$(cat approval)" >> $GITHUB_ENV
+      
+      - name: variable validation
+        run: echo "$approvergroup is testing $data"
+
+      - name: webhook
+        uses: distributhor/workflow-webhook@v2
         env:
-          data: '{ "path": "test52", "env": "test" }'
-          myapprover: $jackuser
+          webhook_type: 'json-extended'
+          webhook_url: 'https://app.harness.io/gateway/api/webhooks/PKy4Wh71AbbPnjYTALe88diqcYEQC713GidulCL8/git?accountId=O0Y6qKtkT0y3pp5IFchY-w'
+          webhook_secret: 'test'
+          data: '{ "path": "test", "env": "test"}'
