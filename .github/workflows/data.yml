@@ -29,10 +29,15 @@ jobs:
         data: '{ "path": "amiinfra/", "env": "test" }'
         group: $(cat approval)
     
-    - name: checkout
-      uses: actions/checkout@v2
-         
+    - name: custom env
+      run: echo "testing the environment variables"
+      env:
+        jack: testing
+
     - name: read env
       run: |
-        echo "this is testing the env ${{ env.data }}"
+        echo "this is testing the env ${{ env.jack }}"
+
+    - name: checkout
+      uses: actions/checkout@v2
      
