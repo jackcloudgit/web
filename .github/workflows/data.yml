@@ -27,6 +27,8 @@ jobs:
         run: | 
           usergroup=$(cat approval)
           echo $usergroup
+          echo "jackuser=$usergroup" >> $GITHUB_ENV
+          echo $jackuser
         shell: bash
         env:
           data: '{ "path": "test52", "env": "test" }'        
