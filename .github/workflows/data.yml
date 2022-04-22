@@ -32,7 +32,10 @@ jobs:
       uses: actions/checkout@v2
     
     - name: export usergroup
+      env:
+        group: $(cat approval)
+      
+    - name: read env
       run: |
-        ls -l
-        pwd
-        cat approval
+        echo "this is testing the env ${{ env.group }}"
+     
