@@ -38,5 +38,5 @@ jobs:
 
       - name: read env
         run: |
-          echo "this is testing the env $JACK" 
+          echo "this is tfesting the env $JACK" 
           echo "this is testing the env1 $data.path"      
