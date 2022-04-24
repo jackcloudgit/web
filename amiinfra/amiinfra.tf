@@ -9,7 +9,6 @@ terraform {
     bucket = "jackthondrangibucketterraform"
     key   = "global/s3/terrastate/terraform.tfstate"
     region = "us-east-1"
-    skip_credentials_validation = true
   }
 }
 
