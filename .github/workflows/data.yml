@@ -27,7 +27,7 @@ jobs:
         run: | 
           echo "approvergroup=$(cat approval)" >> $GITHUB_ENV
       
-      - name: webshook
+      - name: webhook
         uses: distributhor/workflow-webhook@v2
         env:
           webhook_type: 'json-extended'
