@@ -4,12 +4,13 @@ provider "aws" {
     secret_key = var.AWS_SECRET_ACCESS_KEY
 }
 
-terraform {
-  backend "s3" {
-    bucket = "jackthondrangibucketterraform"
-    region = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = "jackthondrangibucketterraform"
+#     region = "us-east-1"
+#     encrypt = true
+#   }
+# }
 
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_ACCESS_KEY" {}
