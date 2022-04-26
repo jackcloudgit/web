@@ -20,6 +20,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     #echo "jackuser=$usergroup" >> $GITHUB_ENV
+    #test -f README && echo README exists
     steps:
       - name: checkout
         uses: actions/checkout@v2
