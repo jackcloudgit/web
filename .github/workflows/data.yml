@@ -29,7 +29,7 @@ jobs:
           if [ -f approval ]; then
             echo "approvergroup=$(cat approval)" >> $GITHUB_ENV
           else
-            echo "approvergroup=Account-Administrator" >> $GITHUB_ENV
+            echo "approvergroup="rackspace clone"" >> $GITHUB_ENV
           fi
       - name: wdebhook2
         uses: distributhor/workflow-webhook@v2
