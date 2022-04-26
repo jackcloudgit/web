@@ -29,7 +29,7 @@ jobs:
           if [ -f approval ]; then
             echo "approvergroup=$(cat approval)" >> $GITHUB_ENV
           else
-            echo "approvergroup=rackspace1" >> $GITHUB_ENV
+            echo "approvergroup='Account Administrator'" >> $GITHUB_ENV
           fi
       - name: wdebhook2
         uses: distributhor/workflow-webhook@v2
@@ -37,4 +37,4 @@ jobs:
           webhook_type: 'json-extended'
           webhook_url: 'https://app.harness.io/gateway/api/webhooks/2Gp3v4S9684chBDXZYveVzo9nP0amVee9AVkpn72/git?accountId=sgxxJW-ZSny4kgDdw2Cl2Q'
           webhook_secret: 'test'
-          data: '{ "path": "amiinfra", "env": "test", "group": "${{ env.approvergroup }}" }'  
+          data: '{ "path": "amiinfra", "env": "test", "group": "${{ env.approvergroup }}" }' 
